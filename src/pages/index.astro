@@ -1,11 +1,23 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
-
-<Layout>
-	<Welcome />
-</Layout>
+<html>
+  <head>
+    <title>我的页面</title>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.6"
+      integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+</html>
+<section>
+  <!-- <div id="parent-div">目标在这</div> -->
+  <div id="parent-div">目标在这</div>
+  <button
+    hx-post="/partials/clicked/"
+    hx-trigger="click"
+    hx-target="#parent-div"
+    hx-swap="innerHTML"
+  >
+      点我！
+  </button>
+</section>
